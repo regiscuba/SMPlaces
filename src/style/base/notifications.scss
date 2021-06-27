@@ -1,0 +1,38 @@
+@import './typography';
+@import './mixin';
+
+.vue-notification-group {
+	margin-bottom: 30px;
+
+	.notification {
+		height: 50px;			
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 3px;	
+		
+		@include media(mobile) {
+			width: 100%;
+			margin: 0 5%;
+		}
+
+		.notification-title {
+			@include fontMontserrat(17px, 400, 0px);
+			color: $white;
+			
+			@include media(mobile) {
+                @include fontMontserrat(13px, 400, 0px);
+			}
+		}	
+
+		&.error {
+			background: $error;
+			border: 1px solid $error;
+		}
+
+		&.success {
+			background: $success;
+			border: 1px solid $success;
+		}
+	}
+}
